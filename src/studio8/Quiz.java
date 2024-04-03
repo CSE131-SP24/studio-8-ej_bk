@@ -27,6 +27,13 @@ public class Quiz {
 	
 	public void takeQuiz() {
 		//FIXME
+		int totCorrect= 0;
+		for(int i=0; i<questions.length; i++) {
+			questions[i].displayPrompt();
+			totCorrect+=questions[i].checkAnswer(getUserAnswer());
+			questions[i].getPoints();
+		}
+		System.out.println(getTotalPoints()+ ""+ totCorrect);
 	}
 	
 	public static void main(String[] args) {
